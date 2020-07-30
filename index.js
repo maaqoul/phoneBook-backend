@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const cors = require('cors');
 const port = process.env.PORT || 3001;
 
 let persons = [
@@ -25,7 +26,7 @@ let persons = [
         id: 4
     }
 ];
-
+app.use(cors());
 app.use(express.json());
 morgan.token('body', (req, res) => { return JSON.stringify(req.body) })
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'));
