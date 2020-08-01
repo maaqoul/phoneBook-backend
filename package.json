@@ -9,7 +9,7 @@
     "dev": "nodemon index.js",
     "build:ui": "rm -rf build && cd ../fullStackOpen/part2/the-phonebook && npm run build --prod && cp -r build ../../../phoneBook-backend/",
     "deploy": "git push heroku master",
-    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",    
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
     "logs:prod": "heroku logs --tail"
   },
   "repository": {
@@ -29,7 +29,10 @@
   "homepage": "https://github.com/maaqoul/phoneBook-backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.9.27",
+    "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
